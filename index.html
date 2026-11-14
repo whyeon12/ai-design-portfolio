@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 설계 자동화 포트폴리오</title>
+<meta name="description" content="CAD MCP · ILJIN AX2 — 도면에서 입찰까지, 설계를 시스템으로.">
+<meta property="og:title" content="AI 설계 자동화 포트폴리오">
+<meta property="og:description" content="CAD MCP · ILJIN AX2 — 도면에서 입찰까지, 설계를 시스템으로.">
+<meta property="og:image" content="poster.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#f7f7f9; --card:#ffffff; --ink:#1d1d1f; --muted:#6e6e73; --line:#d2d2d7; --soft:#e8e8ed; --accent:#0066cc; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font-family:'Noto Sans KR', system-ui, sans-serif; -webkit-font-smoothing:antialiased; }
+  .wrap { max-width:1080px; margin:0 auto; padding:56px 16px 72px; }
+  .eyebrow { font-size:13px; font-weight:700; letter-spacing:.18em; color:var(--accent); }
+  h1 { font-size:clamp(30px,5.4vw,52px); line-height:1.15; font-weight:800; margin:12px 0 10px; letter-spacing:-.02em; }
+  h1 span { color:var(--accent); }
+  .lead { color:var(--muted); font-size:clamp(15px,2vw,18px); margin:0 0 32px; }
+  .player { background:var(--card); border-radius:24px; padding:10px; box-shadow:0 18px 50px rgba(29,29,31,.08); }
+  video { width:100%; display:block; border-radius:16px; background:#eef0f3; aspect-ratio:16/9; }
+  .chapters { display:flex; flex-wrap:wrap; gap:8px; margin:18px 0 48px; }
+  .chapters button { font:inherit; font-size:14px; font-weight:500; border:1px solid var(--line); background:var(--card); color:var(--ink); border-radius:999px; padding:8px 14px; cursor:pointer; }
+  .chapters button:hover, .chapters button.on { border-color:var(--accent); color:var(--accent); }
+  .chapters time { color:var(--muted); margin-right:6px; font-variant-numeric:tabular-nums; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px; }
+  .card { background:var(--card); border-radius:24px; padding:28px; box-shadow:0 10px 30px rgba(29,29,31,.06); }
+  .card .num { font-size:13px; font-weight:700; color:var(--accent); letter-spacing:.12em; }
+  .card h2 { font-size:26px; font-weight:800; margin:6px 0 8px; }
+  .card p { color:var(--muted); margin:0 0 16px; line-height:1.6; }
+  .card ul { margin:0; padding:0; list-style:none; }
+  .card li { padding:10px 0; border-top:1px solid var(--soft); font-size:15px; line-height:1.5; }
+  .card li b { font-weight:700; }
+  footer { margin-top:56px; color:var(--muted); font-size:13px; line-height:1.7; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">AI DESIGN AUTOMATION · PORTFOLIO 2026</div>
+  <h1>도면에서 입찰까지,<br><span>설계를 시스템으로.</span></h1>
+  <p class="lead">전력 설비(GIS) 전기 설계를 AI가 직접 읽고 검산하고 고치는 두 시스템 — CAD MCP · ILJIN AX2</p>
+
+  <div class="player">
+    <video id="v" src="portfolio.mp4" poster="poster.jpg" controls playsinline preload="metadata"></video>
+  </div>
+  <div class="chapters" id="ch"></div>
+
+  <div class="grid">
+    <section class="card">
+      <div class="num">01</div>
+      <h2>CAD MCP</h2>
+      <p>AutoCAD 회로도를 AI가 직접 읽고, 검산하고, 고친다.</p>
+      <ul>
+        <li><b>도면 판독</b> — 선과 글자에서 기기·접점·결선을 찾아 구조로 정리</li>
+        <li><b>세 번 확인</b> — 실측 · 저장 전 검산 · 출력본 눈검증 뒤에만 저장</li>
+        <li><b>실수는 한 번만</b> — 사고 기록이 코드 검사가 되어 다음 작업을 지킨다</li>
+      </ul>
+    </section>
+    <section class="card">
+      <div class="num">02</div>
+      <h2>ILJIN AX2</h2>
+      <p>입찰 규격서 수천 쪽에서 요구를 뽑고, 근거로 판정한다.</p>
+      <ul>
+        <li><b>근거 추출</b> — 모든 요구에 쪽 · 조항 근거를 붙여 사람 승인으로</li>
+        <li><b>여러 단계 추론</b> — 규칙 표(JSON)로 적혀 있지 않은 요구까지, 참 · 거짓 · 모름 · 상충</li>
+        <li><b>사람이 마지막에</b> — 확신 낮은 항목만 검토, 고친 답은 다음 문서에 재사용</li>
+      </ul>
+    </section>
+  </div>
+
+  <footer>영상의 도면 · 규격 값은 공개용 예시이며 실제 고객 · 현장 자료가 아닙니다.<br>Motion graphics made with Motion Canvas.</footer>
+</div>
+<script>
+  const CH = [
+    [0,'시작'],[4.9,'CAD MCP'],[16.9,'도면 판독'],[27.0,'세 번 확인'],[37.8,'실수는 한 번만'],
+    [52.8,'ILJIN AX2'],[56.5,'근거 추출'],[65.0,'여러 단계 추론'],[76.9,'보고서']
+  ];
+  const v = document.getElementById('v'), box = document.getElementById('ch');
+  const fmt = s => Math.floor(s/60) + ':' + String(Math.floor(s%60)).padStart(2,'0');
+  const btns = CH.map(([t, name]) => {
+    const b = document.createElement('button');
+    b.innerHTML = '<time>' + fmt(t) + '</time>' + name;
+    b.onclick = () => { v.currentTime = t; v.play(); };
+    box.appendChild(b);
+    return b;
+  });
+  v.addEventListener('timeupdate', () => {
+    let k = 0; CH.forEach(([t], i) => { if (v.currentTime >= t - 0.05) k = i; });
+    btns.forEach((b, i) => b.classList.toggle('on', i === k));
+  });
+</script>
+</body>
+</html>
